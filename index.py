@@ -5,8 +5,8 @@ class iboytech(Enum):
     ACTIVE =1
 
 print(list(iboytech))
-age = input("What is your Age?  ")
-print(f'Am {age}  years  of age')
+# age = input("What is your Age?  ")
+# print(f'Am {age}  years  of age')
 
 # lists
 myList =[
