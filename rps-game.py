@@ -19,7 +19,7 @@ def checker (computer , player):
             return "Rock smashes scissor!  You Won!"
         else:
             return "paper cover rock!  You lose!"
-
+ 
     elif player == "paper" :
         if computer == "rock":
             return "paper cover rock!  You Won!"
