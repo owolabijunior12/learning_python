@@ -3,14 +3,17 @@ from datetime import date
 from smtplib import SMTP
 from lib.text import demoUserData
 from sys import argv
-
+from argparse  import ArgumentParser
+from functools import reduce
 print(argv)
 # server =SMTP("localhost:8080")
 # server.sendmail(
 #     from_addr="owolabijunior12@gmail.com",
 #     to_addrs="iboytech.info@gmail.com",
-#     msg="hello am here"
+#     msg="hello am here",
 # )
+
+
 
 print(demoUserData)
 class iboytech(Enum):
@@ -40,7 +43,7 @@ print(f"iboytech is here learning python on the {date.today()}")  # type: ignore
 
 del myList[0]
 print(myList)
-_newList =["iboytech",21,True,"hello"]
+_newList =["iboytech",21,True,"hello",]
 _newList.pop()
 print(_newList)
 #  set
@@ -99,3 +102,50 @@ print(dog("iboytech",24).walk())
 
 s= "hello, I'm {} a software engineer from yabatech"
 print(s.format(iboytech))
+parser = ArgumentParser(
+    description="This is to tell iboytech to the world! inshallah📿"
+)
+
+parser.add_argument("-c", "--color", metavar="color", required=True,choices={"red","blue","yellow"}, help="the help color to search for")
+args= parser.parse_args()
+print(args.color)
+
+
+# map()
+number =[1,2,3,4,5,6,7,8,9]
+
+def double(a):
+    return a
+
+hell = lambda b : b * 2
+
+result = map( hell, number)
+print(list(result))
+print(list(number))
+# filter
+def isEven(n):
+    return n % 2 == 0
+
+isEven2 = lambda n : n % 2 == 0 
+
+result2 = filter(isEven, number)
+result3 = filter(isEven2, number)
+print(list(result2))
+print(list(result3))
+
+
+expenses = [
+    ("dinner",80),
+    ("dinner",80),
+    ("car_repair",2)
+]
+
+sum = 0
+for exp in expenses:
+    sum += exp[1]
+ 
+exp2 = lambda a, b: a[1] + b[1] 
+sum2 = reduce(exp2,expenses)   
+print(sum)    
+print(sum2)    
+  
